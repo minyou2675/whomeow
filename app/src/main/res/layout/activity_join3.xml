@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="360dp"
+    android:layout_height="640dp"
+    tools:context=".Join3"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_marginTop="250dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:hint="PASSWORD"
+        android:gravity="center"
+        android:background="#E5E5E5"
+        />
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8자 이상 15자 이하의 영어+숫자로 구성된\n비밀번호를 입력하세요."
+        android:textColor="@color/black">
+    </TextView>
+
+
+
+    <Button
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="NEXT(3/3)"
+        android:background="#DF4629"
+        android:textColor="@color/white">
+
+    </Button>
+
+
+</LinearLayout>
