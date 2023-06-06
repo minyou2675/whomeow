@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DailyChart">
+    tools:context=".MonthlyChart">
 
     <ImageView
         android:id="@+id/imageView"
@@ -61,15 +61,13 @@
         app:layout_constraintVertical_bias="0.08" />
 
 
-
-
     <TextView
-        android:id="@+id/title_daily"
+        android:id="@+id/title_monthly"
         android:layout_width="185dp"
         android:layout_height="53dp"
         android:background="@drawable/rounded"
         android:gravity="center_horizontal|center_vertical"
-        android:text="@string/text_daily"
+        android:text="@string/text_monthly"
         android:textColor="@color/white"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/bar_chart"
@@ -77,6 +75,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.961" />
+
+
+    <Button
+        android:id="@+id/btn_montoday"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="@string/text_daily"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_montoweek"
+        app:layout_constraintHorizontal_bias="0.31"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97" />
+
+    <Button
+        android:id="@+id/btn_montoweek"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:gravity="clip_vertical|center_horizontal"
+        android:text="@string/text_weekly"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97" />
+
 
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/bar_chart"
@@ -88,36 +115,7 @@
         app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766" >
-    </com.github.mikephil.charting.charts.BarChart>
-
-    <Button
-        android:id="@+id/btn_weekly"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:text="@string/text_weekly"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_monthly"
-        app:layout_constraintHorizontal_bias="0.31"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.97" />
-
-    <Button
-        android:id="@+id/btn_monthly"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:gravity="clip_vertical|center_horizontal"
-        android:text="@string/text_monthly"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.865"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.97" />
-
+        app:layout_constraintVertical_bias="0.766" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,4 +2,7 @@
     <string name="app_name">whomeow</string>
     <string name="title_activity_main2">MainActivity2</string>
     <string name="title_activity_main3">MainActivity3</string>
+    <string name="text_weekly">주간일지</string>
+    <string name="text_monthly">월간일지</string>
+    <string name="text_daily">일간일지</string>
 </resources>

@@ -4,7 +4,8 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.whomeow.databinding.ActivityDailyChartBinding
+import com.example.nycy1020.whomeowproject.DailyChart
+import com.example.whomeow.databinding.ActivityWeeklyChartBinding
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.components.AxisBase
 import com.github.mikephil.charting.components.XAxis
@@ -14,34 +15,31 @@ import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.ValueFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
 
-class DailyChart : AppCompatActivity() {
-    lateinit var binding: ActivityDailyChartBinding
-    lateinit var barChart: BarChart
+class WeeklyChart : AppCompatActivity() {
+    private lateinit var binding: ActivityWeeklyChartBinding
+    private lateinit var barChart: BarChart
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDailyChartBinding.inflate(layoutInflater)
+        binding = ActivityWeeklyChartBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-        //btn for chart activity
-        binding.btnWeekly.setOnClickListener {
-            startActivity((Intent(this,WeeklyChart::class.java)))
-        }
-        binding.btnMonthly.setOnClickListener {
+        binding.btnWeektomon.setOnClickListener {
             startActivity((Intent(this,MonthlyChart::class.java)))
+        }
+        binding.btnWeektoday.setOnClickListener {
+            startActivity((Intent(this, DailyChart::class.java)))
         }
 
 
 
 
         barChart = findViewById(R.id.bar_chart)  //barChart 생성
-
         val list = ArrayList<BarEntry>()
-        list.add(BarEntry(1.2f, 80.0f))
-        list.add(BarEntry(2.2f, 60.0f))
+        list.add(BarEntry(1.2f, 20.0f))
+        list.add(BarEntry(2.2f, 70.0f))
         list.add(BarEntry(3.2f, 30.0f))
-        list.add(BarEntry(4.2f, 20.0f))
+        list.add(BarEntry(4.2f, 90.0f))
         list.add(BarEntry(5.2f, 70.0f))
 
         barChart.run {
@@ -70,7 +68,6 @@ class DailyChart : AppCompatActivity() {
             legend.isEnabled = false //차트 범례 설정
 
         }
-
         val barDataSet = BarDataSet(list, "List")
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
         barDataSet.valueTextColor = Color.BLACK
@@ -79,7 +76,6 @@ class DailyChart : AppCompatActivity() {
         barChart.setFitBars(true)
         barChart.data = barData
     }
-
     inner class MyXAxisFormatter : ValueFormatter() {
         private val days = arrayOf("행동1", "행동2", "행동3", "행동4", "행동5")
         override fun getAxisLabel(value: Float, axis: AxisBase?): String {
