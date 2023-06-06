@@ -15,8 +15,8 @@ class Join3 : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnNext3.setOnClickListener {
-            val pass = binding.inputPassword.text.toString()
-            if (pass=="") Toast.makeText(
+            val userPassword = binding.inputPassword.text.toString()
+            if (userPassword=="") Toast.makeText(
                 this@Join3,
                 "비밀번호를 입력하세요.",
                 Toast.LENGTH_SHORT
