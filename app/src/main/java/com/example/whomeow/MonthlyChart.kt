@@ -4,7 +4,6 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.nycy1020.whomeowproject.DailyChart
 import com.example.whomeow.databinding.ActivityMonthlyChartBinding
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.components.AxisBase
@@ -23,6 +22,10 @@ class MonthlyChart : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMonthlyChartBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.btnCardEditProfile.setOnClickListener {
+            startActivity((Intent(this,EditProfile::class.java)))
+        }
 
         binding.btnMontoweek.setOnClickListener {
             startActivity((Intent(this,WeeklyChart::class.java)))

@@ -1,23 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="360dp"
-    android:layout_height="640dp"
-    tools:context=".Join"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Join1"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_marginTop="150dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회원가입"
+        android:textSize="40dp"
+        android:textColor="@color/black"/>
+
     <EditText
-        android:layout_marginTop="250dp"
+        android:id="@+id/inputName"
+        android:layout_marginTop="50dp"
         android:layout_gravity="center"
         android:layout_width="220dp"
         android:layout_height="50dp"
         android:hint="이름"
         android:gravity="center"
         android:background="#E5E5E5"
-    />
+        />
 
     <EditText
+        android:id="@+id/inputEmail"
         android:layout_marginTop="30dp"
         android:layout_gravity="center"
         android:layout_width="220dp"
@@ -41,17 +53,18 @@
 
         <TextView
             android:layout_marginLeft="20dp"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:text="회원가입 약관에 동의하십니까?"
-            android:textSize=""
-        />
+            android:textSize="15sp"
+            />
 
 
     </LinearLayout>
 
 
     <Button
+        android:id="@+id/btn_next1"
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
         android:layout_width="150dp"
@@ -61,7 +74,5 @@
         android:textColor="@color/white">
 
     </Button>
-
-
 
 </LinearLayout>

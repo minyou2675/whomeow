@@ -3,10 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="360dp"
-    android:layout_height="640dp"
-    tools:context=".FindPassword"
-    android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FindActivity"    android:orientation="vertical">
 
     <TextView
         android:layout_marginTop="150dp"
@@ -16,9 +15,10 @@
         android:text="아이디\n/비밀번호 찾기"
         android:textColor="@color/black"
         android:textSize="30dp"
-    />
+        />
 
     <Button
+        android:id="@+id/findIdBtn"
         android:layout_marginTop="100dp"
         android:layout_gravity="center"
         android:layout_width="220dp"
@@ -29,6 +29,7 @@
         />
 
     <Button
+        android:id="@+id/findPwBtn"
         android:layout_marginTop="30dp"
         android:layout_gravity="center"
         android:layout_width="220dp"
@@ -37,9 +38,5 @@
         android:textColor="#fff"
         android:background="@color/black"
         />
-
-
-
-
 
 </LinearLayout>

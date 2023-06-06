@@ -138,7 +138,7 @@
             app:layout_constraintVertical_bias="0.168" />
 
         <Button
-            android:id="@+id/go_profile"
+            android:id="@+id/btnCard_editProfile"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:background="#00ff0000"

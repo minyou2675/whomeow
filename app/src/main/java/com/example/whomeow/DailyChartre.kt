@@ -1,5 +1,5 @@
 package com.example.nycy1020.whomeowproject
-
+/*
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -145,3 +145,4 @@ class DailyChart : AppCompatActivity() {
 
 
 }
+*/
