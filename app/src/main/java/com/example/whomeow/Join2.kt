@@ -15,8 +15,8 @@ class Join2 : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnNext2.setOnClickListener {
-            val userId = binding.inputId.text.toString()
-            if (userId=="") Toast.makeText(
+            val inputId = binding.userId.text.toString()
+            if (inputId=="") Toast.makeText(
                 this@Join2,
                 "아이디를 입력하세요.",
                 Toast.LENGTH_SHORT

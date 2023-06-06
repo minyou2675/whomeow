@@ -14,9 +14,9 @@ class Join1 : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnNext1.setOnClickListener {
-            val userName = binding.inputName.text.toString()
-            val userEmail = binding.inputEmail.text.toString()
-            if (userName == "" || userEmail =="") Toast.makeText(
+            val inputName = binding.userName.text.toString()
+            val inputEmail = binding.userEmail.text.toString()
+            if (inputName == "" || inputEmail =="") Toast.makeText(
                 this@Join1,
                 "해당 정보를 모두 입력하세요.",
                 Toast.LENGTH_SHORT

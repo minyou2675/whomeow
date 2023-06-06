@@ -18,7 +18,7 @@
         android:textColor="@color/black"/>
 
     <EditText
-        android:id="@+id/inputName"
+        android:id="@+id/userName"
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
         android:layout_width="220dp"
@@ -29,7 +29,7 @@
         />
 
     <EditText
-        android:id="@+id/inputEmail"
+        android:id="@+id/userEmail"
         android:layout_marginTop="30dp"
         android:layout_gravity="center"
         android:layout_width="220dp"

@@ -16,8 +16,8 @@ class LoginActivity : AppCompatActivity() {
         //DB = DBHelp(this)
 
         loginBinding.login!!.setOnClickListener {
-            val userId = loginBinding.Id!!.text.toString()
-            val userPassword = loginBinding.Pw!!.text.toString()
+            val userId = loginBinding.userId!!.text.toString()
+            val userPassword = loginBinding.userPassword!!.text.toString()
             if (userId == "" || userPassword == "") Toast.makeText(
                 this@LoginActivity,
                 "회원정보를 전부 입력하세요",
