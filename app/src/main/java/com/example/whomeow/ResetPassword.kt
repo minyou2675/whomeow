@@ -7,13 +7,13 @@ import com.example.whomeow.databinding.ActivityResetPasswordBinding
 
 class ResetPassword : AppCompatActivity() {
     lateinit var binding: ActivityResetPasswordBinding
-    //var DB: DBHelp? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
         binding = ActivityResetPasswordBinding.inflate(layoutInflater)
-       // DB = DBHelp(this)
+
 
 
         binding.checkPwBtn!!.setOnClickListener {

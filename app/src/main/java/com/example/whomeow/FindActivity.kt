@@ -6,20 +6,18 @@ import android.os.Bundle
 import com.example.whomeow.databinding.ActivityFindBinding
 
 class FindActivity : AppCompatActivity() {
-    lateinit var findBinding: ActivityFindBinding
+    lateinit var binding: ActivityFindBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_find)
-        findBinding = ActivityFindBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding = ActivityFindBinding.inflate(layoutInflater)
 
-        findBinding.findIdBtn.setOnClickListener {
-            val findIntent = Intent(this@FindActivity, FindingId::class.java)
-            startActivity(findIntent)
+        binding.findIdBtn.setOnClickListener {
+            startActivity((Intent(this,FindingId::class.java)))
         }
 
-        findBinding.findPwBtn.setOnClickListener {
-            val findIntent = Intent(this@FindActivity, FindingPassword::class.java)
-            startActivity(findIntent)
+        binding.findPwBtn.setOnClickListener {
+            startActivity((Intent(this,FindingPassword::class.java)))
 
 
         }

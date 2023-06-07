@@ -19,11 +19,11 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.loginBtn.setOnClickListener {
-            startActivity((Intent(this,WeeklyChart::class.java)))
+            startActivity((Intent(this,LoginActivity::class.java)))
         }
 
         binding.kakaoLoginBtn.setOnClickListener {
-            startActivity((Intent(this,MonthlyChart::class.java)))
+
         }
 
 

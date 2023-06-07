@@ -39,14 +39,12 @@ class DailyChart : AppCompatActivity() {
 
         val list = ArrayList<BarEntry>()
         list.add(BarEntry(1.2f, 80.0f))
-        list.add(BarEntry(2.2f, 60.0f))
-        list.add(BarEntry(3.2f, 30.0f))
         list.add(BarEntry(4.2f, 20.0f))
         list.add(BarEntry(5.2f, 70.0f))
 
         barChart.run {
             description.isEnabled = false
-            setMaxVisibleValueCount(5)
+            setMaxVisibleValueCount(3)
             axisLeft.run {
                 axisMaximum = 101f
                 axisMinimum = 0f
@@ -75,13 +73,13 @@ class DailyChart : AppCompatActivity() {
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
         barDataSet.valueTextColor = Color.BLACK
         val barData = BarData(barDataSet)
-        barData.barWidth = 0.5f //막대 너비 설정
+        barData.barWidth = 1f //막대 너비 설정
         barChart.setFitBars(true)
         barChart.data = barData
     }
 
     inner class MyXAxisFormatter : ValueFormatter() {
-        private val days = arrayOf("행동1", "행동2", "행동3", "행동4", "행동5")
+        private val days = arrayOf("행동1", "행동2", "행동3")
         override fun getAxisLabel(value: Float, axis: AxisBase?): String {
             return days.getOrNull(value.toInt() - 1) ?: value.toString()
         }

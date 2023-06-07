@@ -7,43 +7,32 @@ import android.widget.Toast
 import com.example.whomeow.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
-    lateinit var loginBinding: ActivityLoginBinding
-    //var DB: DBHelp? = null
-    override fun onCreate(savedInstanceState: Bundle?) {
-        loginBinding = ActivityLoginBinding.inflate(layoutInflater)
-        super.onCreate(savedInstanceState)
-        setContentView(loginBinding.root)
-        //DB = DBHelp(this)
+    lateinit var binding: ActivityLoginBinding
 
-        loginBinding.login!!.setOnClickListener {
-            val userId = loginBinding.userId!!.text.toString()
-            val userPassword = loginBinding.userPassword!!.text.toString()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+
+
+        binding.btnLogin.setOnClickListener {
+            val userId = binding.userId.text.toString()
+            val userPassword = binding.userPassword.text.toString()
             if (userId == "" || userPassword == "") Toast.makeText(
                 this@LoginActivity,
                 "회원정보를 전부 입력하세요",
                 Toast.LENGTH_SHORT
             ).show() else {
-                /*val checkUserpass = DB!!.checkUserpass(userid, pass)
-                if (checkUserpass == true) {
-                    Toast.makeText(this@LoginActivity, "login", Toast.LENGTH_SHORT)
-                        .show()
-                    val intent = Intent(applicationContext, DailyChart::class.java)
-                    startActivity(intent)
-                } else {
-                    Toast.makeText(this@LoginActivity, "no one", Toast.LENGTH_SHORT)
-                        .show()
-                } */
+
             }
         }
-        loginBinding.joinBtn.setOnClickListener {
-            val loginIntent = Intent(this@LoginActivity, Join1::class.java)
-            startActivity(loginIntent)
+        binding.btnJoin.setOnClickListener {
+            startActivity((Intent(this,Join1::class.java)))
 
         }
 
-        loginBinding.findBtn.setOnClickListener {
-            val loginIntent = Intent(this@LoginActivity, FindActivity::class.java)
-            startActivity(loginIntent)
+        binding.btnFind.setOnClickListener {
+            startActivity((Intent(this,FindActivity::class.java)))
         }
     }
 }
