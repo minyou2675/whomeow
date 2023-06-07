@@ -8,7 +8,7 @@ class RetrofitConnection {
 
     companion object {
         private var retrofit: Retrofit? = null
-        private const val BASE_URL = "http://"
+        private const val BASE_URL = "jdbc:mysql://db-who.c2dkfbc2qp0h.ap-northeast-2.rds.amazonaws.com:3306/dbwho"
 
         fun getRetrofit() : Retrofit {
             if(retrofit ==null) {
