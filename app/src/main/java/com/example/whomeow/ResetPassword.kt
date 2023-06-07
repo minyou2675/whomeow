@@ -1,18 +1,20 @@
 package com.example.whomeow
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.whomeow.databinding.ActivityLoginBinding
 import com.example.whomeow.databinding.ActivityResetPasswordBinding
 
 class ResetPassword : AppCompatActivity() {
     lateinit var binding: ActivityResetPasswordBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityResetPasswordBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding = ActivityResetPasswordBinding.inflate(layoutInflater)
 
 
 
@@ -25,6 +27,7 @@ class ResetPassword : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             ).show()
             else {
+                startActivity((Intent(this,LoginActivity::class.java)))
 
             }
         }

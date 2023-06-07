@@ -6,11 +6,13 @@ import android.os.Bundle
 import com.example.whomeow.databinding.ActivityFindBinding
 
 class FindActivity : AppCompatActivity() {
-    lateinit var binding: ActivityFindBinding
+    private lateinit var binding: ActivityFindBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
         binding = ActivityFindBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
 
         binding.findIdBtn.setOnClickListener {
             startActivity((Intent(this,FindingId::class.java)))

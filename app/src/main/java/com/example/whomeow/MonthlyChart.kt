@@ -39,18 +39,18 @@ class MonthlyChart : AppCompatActivity() {
 
         barChart = findViewById(R.id.bar_chart)  //barChart 생성
         val list = ArrayList<BarEntry>()
-        list.add(BarEntry(1.2f, 20.0f))
-        list.add(BarEntry(2.2f, 70.0f))
-        list.add(BarEntry(3.2f, 30.0f))
+        list.add(BarEntry(1.2f, 8.0f))
+        list.add(BarEntry(2.2f, 10.0f))
+        list.add(BarEntry(3.2f, 10.0f))
 
 
         barChart.run {
             description.isEnabled = false
             setMaxVisibleValueCount(3)
             axisLeft.run {
-                axisMaximum = 101f
+                axisMaximum = 15f
                 axisMinimum = 0f
-                granularity = 20f // 20마다 선 표시
+                granularity = 3f // 20마다 선 표시
                 setDrawLabels(true) //값 표시
                 setDrawGridLines(true) //격자 표시
                 setDrawAxisLine(false) //y축
@@ -75,12 +75,12 @@ class MonthlyChart : AppCompatActivity() {
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
         barDataSet.valueTextColor = Color.BLACK
         val barData = BarData(barDataSet)
-        barData.barWidth = 1.0f //막대 너비 설정
+        barData.barWidth = 0.5f //막대 너비 설정
         barChart.setFitBars(true)
         barChart.data = barData
     }
     inner class MyXAxisFormatter : ValueFormatter() {
-        private val behaviors = arrayOf("행동1", "행동2", "행동3")
+        private val behaviors = arrayOf("scratch", "turn", "feetup")
         override fun getAxisLabel(value: Float, axis: AxisBase?): String {
             return behaviors.getOrNull(value.toInt() - 1) ?: value.toString()
         }

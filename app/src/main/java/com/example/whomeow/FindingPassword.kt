@@ -11,8 +11,8 @@ class FindingPassword : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_finding_password)
         binding = ActivityFindingPasswordBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
         binding.checkPwBtn.setOnClickListener {
@@ -24,8 +24,7 @@ class FindingPassword : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             ).show()
             else {
-                val intent = Intent(applicationContext, LoginActivity::class.java)
-                startActivity(intent)
+                startActivity((Intent(this,ResetPassword::class.java)))
 
             }
         }

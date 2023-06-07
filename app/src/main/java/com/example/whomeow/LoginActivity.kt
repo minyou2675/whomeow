@@ -14,6 +14,15 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        binding.btnJoin.setOnClickListener {
+            startActivity((Intent(this,Join1::class.java)))
+
+        }
+
+        binding.btnFindPage.setOnClickListener {
+            startActivity((Intent(this,FindActivity::class.java)))
+        }
+
 
         binding.btnLogin.setOnClickListener {
             val userId = binding.userId.text.toString()
@@ -23,16 +32,10 @@ class LoginActivity : AppCompatActivity() {
                 "회원정보를 전부 입력하세요",
                 Toast.LENGTH_SHORT
             ).show() else {
+                    startActivity((Intent(this,DailyChart::class.java)))
 
             }
         }
-        binding.btnJoin.setOnClickListener {
-            startActivity((Intent(this,Join1::class.java)))
 
-        }
-
-        binding.btnFind.setOnClickListener {
-            startActivity((Intent(this,FindActivity::class.java)))
-        }
     }
 }

@@ -24,12 +24,16 @@ class DailyChart : AppCompatActivity() {
         setContentView(binding.root)
 
 
+        binding.btnCardEditProfile.setOnClickListener {
+            startActivity((Intent(this,EditProfile::class.java)))
+        }
+
         //btn for chart activity
         binding.btnWeekly.setOnClickListener {
-            startActivity((Intent(this,WeeklyChart::class.java)))
+            startActivity((Intent(this, WeeklyChart::class.java)))
         }
         binding.btnMonthly.setOnClickListener {
-            startActivity((Intent(this,MonthlyChart::class.java)))
+            startActivity((Intent(this, MonthlyChart::class.java)))
         }
 
 
@@ -38,17 +42,17 @@ class DailyChart : AppCompatActivity() {
         barChart = findViewById(R.id.bar_chart)  //barChart 생성
 
         val list = ArrayList<BarEntry>()
-        list.add(BarEntry(1.2f, 80.0f))
-        list.add(BarEntry(4.2f, 20.0f))
-        list.add(BarEntry(5.2f, 70.0f))
+        list.add(BarEntry(1.2f, 5.0f))
+        list.add(BarEntry(2.2f, 13.0f))
+        list.add(BarEntry(3.2f, 8.0f))
 
         barChart.run {
             description.isEnabled = false
             setMaxVisibleValueCount(3)
             axisLeft.run {
-                axisMaximum = 101f
+                axisMaximum = 15f
                 axisMinimum = 0f
-                granularity = 20f // 20마다 선 표시
+                granularity = 3f // 3마다 선 표시
                 setDrawLabels(true) //값 표시
                 setDrawGridLines(true) //격자 표시
                 setDrawAxisLine(false) //y축
@@ -67,21 +71,20 @@ class DailyChart : AppCompatActivity() {
             animateY(1000) // 밑에서부터 올라오는 애니메이션 적용
             legend.isEnabled = false //차트 범례 설정
 
-        }
 
+        }
         val barDataSet = BarDataSet(list, "List")
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
         barDataSet.valueTextColor = Color.BLACK
         val barData = BarData(barDataSet)
-        barData.barWidth = 1f //막대 너비 설정
+        barData.barWidth = 0.5f //막대 너비 설정
         barChart.setFitBars(true)
         barChart.data = barData
     }
-
     inner class MyXAxisFormatter : ValueFormatter() {
-        private val days = arrayOf("행동1", "행동2", "행동3")
+        private val behaviors = arrayOf("scratch", "turn", "feetup")
         override fun getAxisLabel(value: Float, axis: AxisBase?): String {
-            return days.getOrNull(value.toInt() - 1) ?: value.toString()
+            return behaviors.getOrNull(value.toInt() - 1) ?: value.toString()
         }
     }
 }
